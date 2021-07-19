@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { AuxilioService } from './auxilio.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,5 +10,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-setur';
 
-  
+  constructor(private auxilioService: AuxilioService) {}
+  fethAuxilio() {
+    this.auxilioService.fethAuxilio();
+  }
 }
