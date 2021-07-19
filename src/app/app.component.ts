@@ -8,8 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-setur';
 
-  openForm() {
-    const element: HTMLElement = document.getElementById('formulario')!;
-    element.setAttribute('style', 'display: block;');
-  }
+  
 }
