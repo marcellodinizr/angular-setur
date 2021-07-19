@@ -1,0 +1,150 @@
+<main class="container">
+  <div class="info top-info">
+    <h2 class="red-info">ATENÇÃO!</h2>
+    <h3>PARA AGÊNCIAS</h3>
+    <p>
+      A conta para repasse do auxílio precisa ser corrente e em nome da empresa,
+      pessoa jurídica.
+    </p>
+
+    <div class="input-cadastur">
+      <input
+        type="text"
+        id="cadastur"
+        name="cadastur"
+        minlength="14"
+        maxlength="14"
+        placeholder="Digite seu CADASTUR (apenas números)"
+      />
+      <input
+        type="image"
+        src="../assets/images/buttonSearch.png"
+        id="button-search"
+        (click)="openForm()"
+      />
+    </div>
+  </div>
+  <form action="" id="formulario" style="display: none">
+    <div class="info mid-info">
+      <h1 class="red-info" id="nomepj"></h1>
+      <div class="data-input">
+        <p>
+          <strong>Nome Responsável:</strong>
+          <span id="nomeresponsavel"></span> <br />
+          <strong>Razão Social:</strong> <span id="razaosocial"></span>
+          <br />
+          <strong>Nome Fantasia:</strong> <span id="nomefantasia"></span>
+          <br />
+          <strong>Endereço:</strong> <span id="endereco"></span> <br />
+          <strong>Email:</strong> <span id="email"></span> <br />
+          <strong>Telefone:</strong> <span id="telefone"></span> <br />
+          <strong>Município:</strong> <span id="municipio"></span>
+        </p>
+      </div>
+    </div>
+    <div class="form-setur">
+      <ul>
+        <li>
+          <div class="form-style">
+            <input
+              type="text"
+              name="name-titular"
+              class="field-style align-left"
+              placeholder="Nome do titular da conta corrente"
+            />
+            <input
+              type="text"
+              name="number-titular"
+              class="field-style align-right"
+              placeholder="Digite seu número"
+              id="telefone"
+            />
+          </div>
+        </li>
+        <li>
+          <select name="bank" class="select-bank select-info">
+            <option value="selected">Selecione o Banco</option>
+          </select>
+        </li>
+        <li>
+          <div class="form-style">
+            <input
+              type="text"
+              name="agency"
+              class="agency-account-style field-style align-left"
+              placeholder="Agência"
+            />
+            <select
+              name="verificar-agency"
+              class="select-agency-account select-info align-right"
+            >
+              <option value="selected">Dígito verificador</option>
+            </select>
+          </div>
+        </li>
+        <li>
+          <div class="form-style">
+            <input
+              type="text"
+              name="account"
+              class="agency-account-style field-style align-left"
+              placeholder="Conta corrente"
+            />
+            <select
+              name="verificar-account"
+              class="select-agency-account select-info align-right"
+            >
+              <option value="selected">Dígito verificador</option>
+            </select>
+          </div>
+
+          <div class="form-img">
+            <figure>
+              <img
+                src="../assets/images/form1.png"
+                alt=" comprovante da sede"
+                class="img"
+              />
+            </figure>
+            <figure>
+              <img
+                src="../assets/images/form2.png"
+                alt="comprovante bancario"
+                class="img"
+              />
+            </figure>
+          </div>
+
+          <div class="form-email">
+            <input
+              type="email"
+              name="email"
+              class="email-style field-style"
+              placeholder="Digite seu email"
+              id="email"
+            />
+          </div>
+
+          <div class="form-email">
+            <input
+              type="email"
+              name="verify-email"
+              class="email-style field-style"
+              placeholder="repita seu e-mail"
+            />
+          </div>
+
+          <div class="form-checkbox">
+            <input type="checkbox" id="checkbox" name="checkbox" checked />
+            <label for="scales">
+              <strong
+                >DECLARO que as informações acimas são verdadeiras
+              </strong></label
+            >
+          </div>
+          <button type="button" id="button-auxilio">SOLICITAR AUXÍLIO</button>
+        </li>
+      </ul>
+    </div>
+  </form>
+</main>
