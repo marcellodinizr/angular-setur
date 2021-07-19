@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-container',
@@ -6,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./container.component.css'],
 })
 export class ContainerComponent implements OnInit {
-  openForm() {
-    const element: HTMLElement = document.getElementById('formulario')!;
-    element.setAttribute('style', 'display: block;');
-  }
-
   constructor() {}
 
   ngOnInit(): void {}
 }
+
+// openForm() {
+//   const element: HTMLElement = document.getElementById('formulario')!;
+//   element.setAttribute('style', 'display: block;');
+// }
