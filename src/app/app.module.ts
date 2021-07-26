@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { ContainerComponent } from './components/template/container/container.component';
-import { AuxilioService } from './services/auxilio.service';
+// import { AuxilioService } from './services/auxilio.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { AuxilioService } from './services/auxilio.service';
     ContainerComponent,
   ],
   imports: [BrowserModule, ReactiveFormsModule, HttpClientModule],
-  providers: [AuxilioService, HttpClient],
+  providers: [HttpClient],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
