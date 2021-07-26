@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Auxilios } from 'src/app/models/auxilio.model';
-import { AuxilioService } from 'src/app/services/auxilio.service';
+
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-container',
@@ -8,29 +8,39 @@ import { AuxilioService } from 'src/app/services/auxilio.service';
   styleUrls: ['./container.component.css'],
 })
 export class ContainerComponent implements OnInit {
+  api: string = '';
   auxilios: any;
   erro: any;
-  constructor(private auxilioService: AuxilioService) {
-    this.getter();
+
+  found: boolean;
+
+  // openForm() {
+  //   const element: HTMLElement = document.getElementById('formulario')!;
+  //   element.setAttribute('style', 'display: block;');
+  // }
+
+  constructor(private httpClient: HttpClient) {}
+
+  onNameKeyUp(event: any) {
+    this.api = event.target.value;
+    this.found = false;
   }
 
-  openForm() {
-    const element: HTMLElement = document.getElementById('formulario')!;
-    element.setAttribute('style', 'display: block;');
+  getApi() {
+    this.httpClient
+      .get(
+        `https://auxilio.turismo.ma.gov.br/api.consulta.php?busca=${this.api}/json/`
+      )
+      .subscribe(
+        (data: any) => {
+          this.auxilios = data.busca;
+        },
+        (error) => {
+          this.erro = error;
+          console.error('Error: ', error);
+        }
+      );
   }
 
   ngOnInit() {}
-  getter() {
-    this.auxilioService.getAuxilio().subscribe(
-      (data: Auxilios) => {
-        this.auxilios = data.busca;
-        console.log('O data recebido:', data.busca);
-        console.log('A variavel preenchida:', this.auxilios);
-      },
-      (error) => {
-        this.erro = error;
-        console.error('Error: ', error);
-      }
-    );
-  }
 }
