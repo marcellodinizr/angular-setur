@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
 import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2';
+
+// 27661734000178
 
 @Component({
   selector: 'app-container',
@@ -10,14 +12,9 @@ import { HttpClient } from '@angular/common/http';
 export class ContainerComponent implements OnInit {
   api: string = '';
   auxilios: any;
-  erro: any;
+  error: null;
 
   found: boolean;
-
-  // openForm() {
-  //   const element: HTMLElement = document.getElementById('formulario')!;
-  //   element.setAttribute('style', 'display: block;');
-  // }
 
   constructor(private httpClient: HttpClient) {}
 
@@ -36,8 +33,8 @@ export class ContainerComponent implements OnInit {
           this.auxilios = data.busca;
         },
         (error) => {
-          this.erro = error;
-          console.error('Error: ', error);
+          this.error = error.messsage;
+          Swal.fire('Oops...', 'Something went wrong!');
         }
       );
   }
