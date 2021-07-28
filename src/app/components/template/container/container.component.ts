@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 import Swal from 'sweetalert2';
 
 // 27661734000178
@@ -14,13 +15,10 @@ export class ContainerComponent implements OnInit {
   auxilios: any;
   error: null;
 
-  found: boolean;
-
   constructor(private httpClient: HttpClient) {}
 
   onNameKeyUp(event: any) {
     this.api = event.target.value;
-    this.found = false;
   }
 
   getApi() {
@@ -34,6 +32,7 @@ export class ContainerComponent implements OnInit {
         },
         (error) => {
           this.error = error.messsage;
+          console.log('oops', error);
           Swal.fire('Oops...', 'Something went wrong!');
         }
       );

@@ -16,7 +16,6 @@
         maxlength="14"
         placeholder="Digite seu CADASTUR (apenas números)"
         (keyup)="onNameKeyUp($event)"
-        
       />
       <input
         type="image"
@@ -26,26 +25,28 @@
       />
     </div>
   </div>
-  <form action="" id="formulario" *ngFor="let i of auxilios">
+  <form action="" id="formulario" *ngFor="let auxilio of auxilios">
     <div class="info mid-info">
-      <h1 class="red-info" id="nomepj">{{ i.nomepj }}</h1>
+      <h1 class="red-info" id="nomepj">{{ auxilio.nomepj }}</h1>
       <div class="data-input">
         <p>
           <strong>Nome Responsável:</strong>
-          <span id="nomeresponsavel"> {{ i.nomeresponsavel }}</span> <br />
+          <span id="nomeresponsavel"> {{ auxilio.nomeresponsavel }}</span>
+          <br />
           <strong>Razão Social:</strong>
-          <span id="razaosocial"> {{ i.razaosocial }}</span>
+          <span id="razaosocial"> {{ auxilio.razaosocial }}</span>
           <br />
           <strong>Nome Fantasia:</strong>
-          <span id="nomefantasia">{{ i.nomefantasia }}</span>
+          <span id="nomefantasia">{{ auxilio.nomefantasia }}</span>
           <br />
           <strong>Endereço:</strong>
-          <span id="endereco">{{ i.endereco }}</span> <br />
-          <strong>Email:</strong> <span id="email">{{ i.email }}</span> <br />
+          <span id="endereco">{{ auxilio.endereco }}</span> <br />
+          <strong>Email:</strong> <span id="email">{{ auxilio.email }}</span>
+          <br />
           <strong>Telefone:</strong>
-          <span id="telefone">{{ i.telefone }}</span> <br />
+          <span id="telefone">{{ auxilio.telefone }}</span> <br />
           <strong>Município:</strong>
-          <span id="municipio">{{ i.municipio }}</span>
+          <span id="municipio">{{ auxilio.municipio }}</span>
         </p>
       </div>
     </div>
